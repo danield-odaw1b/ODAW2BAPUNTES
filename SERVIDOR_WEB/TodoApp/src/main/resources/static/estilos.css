@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #1f2937;
+    background: #f8fafc;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #ffffff;
+}
+
+.cabecera nav {
+    display: flex;
+    gap: 1rem;
+}
+
+main {
+    max-width: 48rem;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.lista-tareas {
+    padding: 0;
+    list-style: none;
+}
+
+.lista-tareas li {
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border: 1px solid #dbe2ea;
+    border-radius: 0.5rem;
+    background: #ffffff;
+}

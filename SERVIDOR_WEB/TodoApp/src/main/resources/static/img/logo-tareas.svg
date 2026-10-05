@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128"
+     viewBox="0 0 128 128" role="img" aria-label="Lista de tareas">
+    <rect width="128" height="128" rx="22" fill="#155e8b"/>
+    <path d="M28 37l8 8 13-15M28 67l8 8 13-15M28 97l8 8 13-15"
+          fill="none" stroke="white" stroke-width="6"/>
+    <path d="M61 39h38M61 69h38M61 99h38"
+          stroke="white" stroke-width="6" stroke-linecap="round"/>
+</svg>
