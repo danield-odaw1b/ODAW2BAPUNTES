@@ -5,11 +5,10 @@ for (let i = 0; i < 10; i++){
     arr[i] = prompt('Introduce un número en ' + i + ': ');
 }
 
-
 var arrRep = new Array();
 var aux = true;
-for (let i = 0; i < arr.length; i++){
-    for (let j = 0; j < arrRep.length; j++){
+for (let i = arr.length; i >= 0; i--){
+    for (let j = arr.length; j >= 0; j--){
         if(arr[i] == arrRep[j]) {
             aux = false;
         }
@@ -19,5 +18,4 @@ for (let i = 0; i < arr.length; i++){
     }
     aux = true;
 }
-
 console.log(arrRep);
