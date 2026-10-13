@@ -33,7 +33,7 @@ for (let i = 0; i < arr2.length; i++){
     }
 }
 if(contador){
-    console.log('ERROR');
+    console.log('error');
 } else {
     console.log(res);
 }

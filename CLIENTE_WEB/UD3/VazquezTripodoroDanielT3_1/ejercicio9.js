@@ -9,39 +9,38 @@ var nuevoDni;
 var letra = 'TRWAGMYFPDXBNJZSQVHLCKE';
 var letraArr = letra.split('');
 
-
 while (menu) {
-    var opcion = prompt('=== INSERTAR USUARIO === \n' +
-        '[Nombre] [Apellido1] [Apellido2] [DNI] \n');
-        if(opcion == 'exit'){
-            menu = false;
-            break;
-        }
+    var opcion = prompt('=== INSERTAR USUARIO === [Nombre] [Apellido1] [Apellido2] [DNI]: ');
+    if(opcion == 'exit'){
+        menu = false;
+        break;
+    }
     nuevoUser = opcion.split(" ");
     nuevoDni = nuevoUser[3];
+    var dniNum = nuevoDni.split(nuevoDni.charAt(8));
 
-    var dniValido = true;
-    for (let i = 0; i < dnis.length; i++){
-        if(nuevoDni == dnis[i]){
-            dniValido = false;
-        }
+    var dniValido = 0;
+    if(dnis.includes(nuevoDni)){
+        dniValido = 2;
+    } else if(!(letraArr.includes(nuevoDni.charAt(8)))){
+        dniValido = 1;
+    } else if(nuevoDni.length != 9){
+        dniValido = 1;
+    } else if (letraArr[(Number) (dniNum[0]) % 23] != nuevoDni.charAt(8)){
+        dniValido = 1;
     }
-    for (let i = 0; i < letraArr.length; i++){
-        if(nuevoDni.charAt(9) == letraArr[i]){
+    
+    switch(dniValido) {
+        case 0:
+            usuarios.push(opcion);
+            dnis.push(nuevoDni);
+            console.log(usuarios);
             break;
-        } else if (i == letraArr.length-1){
-            dniValido = false;
-        }
-    }
-    if(nuevoDni.length != 9){
-        dniValido = false;
-    }
-
-
-    if(dniValido){
-        console.log(nuevoUser);
-        usuarios.push(opcion);
-    } else{
-        console.log('Error en el DNI');
+        case 1:
+            console.log('Error DNI');
+            break;
+        case 2:
+            console.log('DNI ya existe');
+            break;
     }
 }
