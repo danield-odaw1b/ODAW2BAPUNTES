@@ -32,7 +32,7 @@ while (menu) {
     
     switch(dniValido) {
         case 0:
-            usuarios.push(opcion);
+            usuarios.push(nuevoUser);
             dnis.push(nuevoDni);
             console.log(usuarios);
             break;
