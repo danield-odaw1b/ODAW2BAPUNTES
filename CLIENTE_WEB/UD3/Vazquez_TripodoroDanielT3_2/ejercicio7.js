@@ -8,7 +8,7 @@ var cond1 = 0;
 while (cond1 < 3) {
     let texto = prompt('Crea un usuario y contraseña: ');
     let array = texto.split(' ');
-
+    
     if (array.length != 2 || array[0] == '' || array[1] == '') {
         console.log('Entrada inválida');
     } else {
@@ -19,10 +19,10 @@ while (cond1 < 3) {
 
 var cond2 = true;
 while (cond2) {
-    let intento = prompt('Intento de login: ');
+    let intento = prompt();
     let login = intento.split(' ');
 
-    if (login.length != 2 || login[0] == '' || login[1] == '' && login[0] != '0' && login[1] != '0') {
+    if (login.length != 2 || login[0] == '' || login[1] == '') {
         console.log('Entrada inválida');
     } else {
         if (bloqueados.get(login[0]) >= 3) {
@@ -36,6 +36,10 @@ while (cond2) {
             if (bloqueados.get(login[0]) >= 3){
                 console.log('Cuenta bloqueada');
                 blocks++;
+                 if (blocks >= mapa.size) {
+                    console.log('Todos los usuarios están bloqueados');
+                    cond2 = false;
+                }
             } else {
                 console.log('Usuario o contraseña incorrecta');
             }
@@ -46,9 +50,4 @@ while (cond2) {
             console.log('Usuario o contraseña incorrecta');
         }
     }
-    if (blocks >= mapa.size) {
-        console.log('Todos los usuarios están bloqueados');
-        cond2 = false;
-    }
-
 }
