@@ -33,8 +33,12 @@ while (cond2) {
             } else {
                 bloqueados.set(login[0], 1);
             }
-            console.log('Usuario o contraseña incorrecta');
-            if (bloqueados.get(login[0]) >= 3) { blocks++; }
+            if (bloqueados.get(login[0]) >= 3){
+                console.log('Cuenta bloqueada');
+                blocks++;
+            } else {
+                console.log('Usuario o contraseña incorrecta');
+            }
         } else if ((mapa.has(login[0]) && login[1] == mapa.get(login[0])) && (bloqueados.get(login[0]) < 3 || !bloqueados.has(login[0]))) {
             console.log('Usuario logeado');
             cond2 = false;
