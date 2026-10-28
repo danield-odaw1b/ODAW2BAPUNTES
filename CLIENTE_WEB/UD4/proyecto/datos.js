@@ -190,3 +190,46 @@ function contienePalabra(texto, palabra){
 function buscarEjerciciosPorNombre(plan, nombreParcial) {
     return ejerciciosFiltrados = plan.ejercicios.filter((a) => contienePalabra(a.nombre, nombreParcial));
 }
+
+
+function estadisticasPlan(plan) {
+    var duracionPromedio = 0;
+    var intensidadPromedio = 0;
+    var totalEjercicios;
+
+    if(plan.ejercicios.length > 0){
+        totalEjercicios = 0;
+        for (const ej of plan.ejercicios){
+            duracionPromedio += ej.duracion;
+            intensidadPromedio += ej.intensidad;
+            totalEjercicios++;
+        }
+        duracionPromedio = duracionPromedio / totalEjercicios;
+        intensidadPromedio = intensidadPromedio / totalEjercicios;
+    }
+    
+    return res = {
+        duracionPromedio: duracionPromedio,
+        intensidadPromedio: intensidadPromedio,
+        totalEjercicios: totalEjercicios,
+    };
+}
+
+function combinarPlanes(plan1, plan2){
+    var nombreNuevo = plan1.nombre + ' + ' + plan2.nombre;
+
+    var ejerNuevos = new Set();
+    for(const ej of plan1.ejercicios){
+        if (!ejerNuevos.has(ej)){
+            ejerNuevos.push(ej);
+        } else {
+            let ejNuevo = ej
+        }
+    }
+}
+
+
+module.exports = {
+
+
+};
