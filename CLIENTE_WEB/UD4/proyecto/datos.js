@@ -17,7 +17,7 @@ function crearPlan(nombre) {
 }
 
 
-function agregarEjercicio(plan, ejercicio) { //No va
+function agregarEjercicio(plan, ejercicio) {
     return planNuevo = {
         nombre: plan.nombre, 
         ejercicios: [...plan.ejercicios, ejercicio]
@@ -30,12 +30,11 @@ function eliminarEjercicio(plan, nombreEjercicio) {
         ...plan,
         ejercicios: [...plan.ejercicios.filter((ej) => ej.nombre != nombreEjercicio)]
     }
-
 }
 
 
-function listarEjercicios(plan) { /* UNDEFINED ERROR */
-    if (plan.ejercicios == null) {
+function listarEjercicios(plan) {
+    if (plan.ejercicios.length < 1) {
         console.log('El plan no tiene ejercicios.');
     } else {
         for (const ej of plan.ejercicios) {

@@ -97,7 +97,7 @@ function menuPlanes(plan, listaPlanes){
                 if(nuevoEj == null){
                     console.log('Datos no válidos.');
                 } else {
-                    var nuevoPlan = agregarEjercicio(plan, nuevoEj);
+                    var nuevoPlan = agregarEjercicio(listaPlanes.get(plan.nombre), nuevoEj);
                     listaPlanes.set(nuevoPlan.nombre, nuevoPlan);
                     console.log('Ejercicio agregado.');
                 }
@@ -120,7 +120,7 @@ function menuPlanes(plan, listaPlanes){
                 }
                 break;
             case 3:
-                
+                listarEjercicios(listaPlanes.get(plan.nombre));
                 break;
             case 13:
                 bool = false;
