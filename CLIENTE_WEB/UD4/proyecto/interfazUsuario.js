@@ -105,7 +105,7 @@ function menuPlanes(plan, listaPlanes){
             case 2:
                 let nombreBorrar = prompt('Nombre del ejercicio a eliminar: ');
                 let existe = false;
-                for (const ej of plan.ejercicios){
+                for (const ej of listaPlanes.get(plan.nombre).ejercicios){
                     if (ej.nombre == nombreBorrar){
                         existe = true;
                         break;
@@ -114,13 +114,46 @@ function menuPlanes(plan, listaPlanes){
                 if (!existe){
                     console.log('No existe ningún ejercicio con ese nombre.');
                 } else {
-                    let nuevoPlan = eliminarEjercicio(plan, nombreBorrar);
+                    let nuevoPlan = eliminarEjercicio(listaPlanes.get(plan.nombre), nombreBorrar);
                     listaPlanes.set(nuevoPlan.nombre, nuevoPlan);
                     console.log('Ejercicio eliminado.');
                 }
                 break;
             case 3:
                 listarEjercicios(listaPlanes.get(plan.nombre));
+                break;
+            case 4:
+                let maxima = Number (prompt('Introduce la intensidad máxima: '));
+                let resultado = filtrarEjercicios(listaPlanes.get(plan.nombre), maxima);
+                if (resultado.length < 1){
+                    console.log('Ningún ejercicio cumple el filtro.');
+                } else {
+                    console.log(resultado);
+                }
+                break;
+            case 5:
+                let nombreAct = prompt('Introduce el nombre del ejercicio a actualizar: ');
+                let existeAct = false;
+                for (const ej of listaPlanes.get(plan.nombre).ejercicios){
+                    if (ej.nombre == nombreAct){
+                        existeAct = true;
+                        break;
+                    }
+                }
+                if (!existeAct){
+                    console.log('No existe ningún ejercicio con ese nombre.');
+                } else {
+                    let durAct = Number(prompt('Introduce la nueva duración: '));
+                    let intAct = Number(prompt('Introduce la nueva intensidad: '));
+                    if (durAct < 1 || intAct < 1 || intAct > 10){
+                        console.log('Datos no válidos.');
+                    } else {
+                        let ejActualizado = actualizarEjercicio(listaPlanes.get(plan.nombre), nombreAct, durAct, intAct);
+                        let planActualizado = agregarEjercicio(listaPlanes.get(plan.nombre), ejActualizado);
+                        listaPlanes.set(listaPlanes.get(plan.nombre), planActualizado);
+                        console.log('Ejercicio actualizado.');
+                    }
+                }
                 break;
             case 13:
                 bool = false;
