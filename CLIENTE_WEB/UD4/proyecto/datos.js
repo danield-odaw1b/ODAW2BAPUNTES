@@ -1,29 +1,26 @@
-const plan = {
-    nombre: 'Plan de fuerza',
-    ejercicios: [
-        { nombre: 'Sentadillas', duracion: 15, intensidad: 7 },
-        { nombre: 'Dominadas', duracion: 10, intensidad: 5 },
-    ],
-}
+const {
+    contienePalabra
+} = require('./funcionesUtiles');
 
 
 function crearEjercicio(nombre, duracion, intensidad) {
     if (Number(nombre) == '' || Number.isNaN(Number(duracion)) || duracion < 1 || Number.isNaN(Number(intensidad)) || intensidad < 1 || intensidad > 10) {
         return null;
     } else {
-        return nuevoEj = { nombre, duracion, intensidad };
+        return nuevoEj = { nombre: nombre, duracion: duracion, intensidad: intensidad };
     }
 }
 
 
-function crearplan(nombre) {
+function crearPlan(nombre) {
     return planNuevo = { nombre: nombre, ejercicios: [] }
 }
 
 
 function agregarEjercicio(plan, ejercicio) {
     return planNuevo = {
-        ...plan, ejercicios: [...plan.ejercicios, ejercicio]
+        nombre: plan.nombre, 
+        ejercicios: [...plan.ejercicios, ejercicio]
     }
 }
 
@@ -56,15 +53,6 @@ function filtrarEjercicios(plan, intensidad) {
         }
     }
     return resultado;
-}
-
-
-function calcularDuracionTotal(plan) {
-    var suma = 0;
-    for (const ej of plan.ejercicios) {
-        suma += ej.duracion;
-    }
-    return suma;
 }
 
 
@@ -107,18 +95,6 @@ function buscarEjercicioRecursivo(plan, nombreEjercicio, posicion = 0) {
             return buscarEjercicioRecursivo(plan, nombreEjercicio, (posicion + 1));
         }
     }
-}
-
-
-function multiplicarDuracionesEjercicios(...duraciones) {
-    var resultado = 1;
-    if (duraciones.length >= 1) {
-        for (const duracion of duraciones[0]) {
-            console.log(duracion);
-            resultado = resultado * duracion;
-        }
-    }
-    return resultado;
 }
 
 
@@ -176,60 +152,53 @@ function ordenarEjercicios(plan, criterio) {
 }
 
 
-function contienePalabra(texto, palabra){
-    var res = false;
-    let dividido = texto.split(' ');
-    for (const div of dividido){
-        if (palabra == div){
-            res = true;
-            break;
-        }
-    }
-    return res;
-}
 function buscarEjerciciosPorNombre(plan, nombreParcial) {
     return ejerciciosFiltrados = plan.ejercicios.filter((a) => contienePalabra(a.nombre, nombreParcial));
 }
 
 
-function estadisticasPlan(plan) {
-    var duracionPromedio = 0;
-    var intensidadPromedio = 0;
-    var totalEjercicios;
-
-    if(plan.ejercicios.length > 0){
-        totalEjercicios = 0;
-        for (const ej of plan.ejercicios){
-            duracionPromedio += ej.duracion;
-            intensidadPromedio += ej.intensidad;
-            totalEjercicios++;
-        }
-        duracionPromedio = duracionPromedio / totalEjercicios;
-        intensidadPromedio = intensidadPromedio / totalEjercicios;
-    }
-    
-    return res = {
-        duracionPromedio: duracionPromedio,
-        intensidadPromedio: intensidadPromedio,
-        totalEjercicios: totalEjercicios,
-    };
-}
-
 function combinarPlanes(plan1, plan2){
     var nombreNuevo = plan1.nombre + ' + ' + plan2.nombre;
+    
+    var ejerNuevos = new Array()
+    var contNombres = new Map();
 
-    var ejerNuevos = new Set();
     for(const ej of plan1.ejercicios){
-        if (!ejerNuevos.has(ej)){
+        if (!contNombres.has(ej.nombre)){
             ejerNuevos.push(ej);
+            contNombres.set(ej.nombre, 1);
         } else {
-            let ejNuevo = ej
+            let ejNuevo = {
+                nombre: ej.nombre + '' + (contNombres.get(ej.nombre) + 1),
+                duracion: ej.duracion,
+                intensidad: ej.intensidad
+            };
+            ejerNuevos.push(ejNuevo);
+            contNombres.set(ej, contNombres.get(ej.nombre) + 1);
         }
     }
+    for(const ej of plan2.ejercicios){
+        if (!contNombres.has(ej.nombre)){
+            ejerNuevos.push(ej);
+            contNombres.set(ej.nombre, 1);
+        } else {
+            let ejNuevo = {
+                nombre: ej.nombre + '' + (contNombres.get(ej.nombre) + 1),
+                duracion: ej.duracion,
+                intensidad: ej.intensidad
+            };
+            contNombres.set(ej.nombre, contNombres.get(ej.nombre) + 1);
+            ejerNuevos.push(ejNuevo);
+        }
+    }
+
+    return planNuevo = {
+        nombre: nombreNuevo,
+        ejercicios: ejerNuevos,
+    };
 }
 
 
 module.exports = {
-
-
-};
+    crearPlan
+}
