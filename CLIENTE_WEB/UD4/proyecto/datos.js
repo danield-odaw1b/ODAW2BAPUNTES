@@ -17,7 +17,7 @@ function crearPlan(nombre) {
 }
 
 
-function agregarEjercicio(plan, ejercicio) {
+function agregarEjercicio(plan, ejercicio) { //No va
     return planNuevo = {
         nombre: plan.nombre, 
         ejercicios: [...plan.ejercicios, ejercicio]
@@ -200,5 +200,15 @@ function combinarPlanes(plan1, plan2){
 
 
 module.exports = {
-    crearPlan
+    crearEjercicio,
+    crearPlan,
+    agregarEjercicio,
+    eliminarEjercicio,
+    listarEjercicios,
+    filtrarEjercicios,
+    actualizarEjercicio,
+    buscarEjercicioRecursivo,
+    ordenarEjercicios,
+    buscarEjerciciosPorNombre,
+    combinarPlanes
 }
