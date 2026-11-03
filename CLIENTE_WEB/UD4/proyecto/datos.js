@@ -1,8 +1,3 @@
-const {
-    contienePalabra
-} = require('./funcionesUtiles');
-
-
 function crearEjercicio(nombre, duracion, intensidad) {
     if (Number(nombre) == '' || Number.isNaN(Number(duracion)) || duracion < 1 || Number.isNaN(Number(intensidad)) || intensidad < 1 || intensidad > 10) {
         return null;
@@ -143,16 +138,15 @@ function ordenarEjercicios(plan, criterio) {
         default:
             return plan;
     }
-    var nuevoPlan = {
+    return nuevoPlan = {
         nombre: plan.nombre,
-        ejericios: ejerciciosOrd,
+        ejercicios: ejerciciosOrd
     };
-    return nuevoPlan;
 }
 
 
 function buscarEjerciciosPorNombre(plan, nombreParcial) {
-    return ejerciciosFiltrados = plan.ejercicios.filter((a) => contienePalabra(a.nombre, nombreParcial));
+    return ejerciciosFiltrados = plan.ejercicios.filter((ej) => ej.nombre.includes(nombreParcial));
 }
 
 
@@ -193,7 +187,7 @@ function combinarPlanes(plan1, plan2){
 
     return planNuevo = {
         nombre: nombreNuevo,
-        ejercicios: ejerNuevos,
+        ejercicios: ejerNuevos
     };
 }
 

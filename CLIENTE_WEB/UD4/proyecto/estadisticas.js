@@ -41,3 +41,9 @@ function estadisticasPlan(plan) {
         totalEjercicios: totalEjercicios,
     };
 }
+
+module.exports = {
+    calcularDuracionTotal,
+    multiplicarDuracionesEjercicios,
+    estadisticasPlan
+}

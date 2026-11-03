@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e19ca87c-5a3c-4777-8d1b-ccf0de048e97" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;danield-odaw1b&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/danield-odaw1b/ODAW2BAPUNTES.git&quot;,
+    &quot;accountId&quot;: &quot;60324fa4-06a5-4e02-83e4-f53fd2a025da&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.742261786050308" />
+      <entry key="MS500" value="1.9581630621785546" />
+      <entry key="S2" value="2.642681020897589" />
+      <entry key="S5" value="3.5970980395821197" />
+      <entry key="S10" value="4.183146194564287" />
+      <entry key="S30" value="4.722880043035834" />
+      <entry key="S60" value="5.466103365976744" />
+      <entry key="M2" value="8.732889911154889" />
+      <entry key="M5" value="23.25245310330357" />
+      <entry key="M10" value="55.37920356559391" />
+      <entry key="M15" value="90.87273291431482" />
+      <entry key="M30" value="181.29972287302158" />
+      <entry key="H1" value="282.36599395141224" />
+      <entry key="H2" value="362.3516607439774" />
+      <entry key="H4" value="413.43767988444165" />
+      <entry key="D1" value="463.16826722590775" />
+      <entry key="W1" value="472.4333850360412" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.792506067805917E-173" />
+      <entry key="S2" value="7.285199030920927E-44" />
+      <entry key="S5" value="6.236112185151842E-18" />
+      <entry key="S10" value="3.5117070267442443E-9" />
+      <entry key="S30" value="0.003021556860419401" />
+      <entry key="S60" value="0.10325501274292155" />
+      <entry key="M2" value="0.7012046420567773" />
+      <entry key="M5" value="2.782864944188196" />
+      <entry key="M10" value="5.972417740495065" />
+      <entry key="M15" value="9.474791963059157" />
+      <entry key="M30" value="19.374354940259973" />
+      <entry key="H1" value="31.32891808894479" />
+      <entry key="H2" value="41.1056571727551" />
+      <entry key="H4" value="47.435784270501344" />
+      <entry key="D1" value="53.64314929729051" />
+      <entry key="W1" value="54.80365944372699" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.8345428810817702" />
+      <entry key="MS500" value="1.5057606604797868" />
+      <entry key="S2" value="2.4729302803308957" />
+      <entry key="S5" value="3.502717885306896" />
+      <entry key="S10" value="4.127362064710448" />
+      <entry key="S30" value="4.704483602175834" />
+      <entry key="S60" value="5.554578173894406" />
+      <entry key="M2" value="9.412798336145377" />
+      <entry key="M5" value="26.000500412899964" />
+      <entry key="M10" value="61.30902869220122" />
+      <entry key="M15" value="100.30002438561836" />
+      <entry key="M30" value="200.62374688486915" />
+      <entry key="H1" value="313.6537646107186" />
+      <entry key="H2" value="403.4301807678136" />
+      <entry key="H4" value="460.8577617360028" />
+      <entry key="D1" value="516.8084495341483" />
+      <entry key="W1" value="527.2366112602597" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3LQ4lPMTU4upqMUQEWTqTMEGT6v" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Unnamed.executor": "Debug",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.home.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.PracticaServidorUd1Application.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.practicaservidorud1.PracticaServidorUd1Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e19ca87c-5a3c-4777-8d1b-ccf0de048e97" name="Changes" comment="" />
+      <created>1793373110338</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1793373110338</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

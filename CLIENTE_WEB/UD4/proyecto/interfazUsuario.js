@@ -14,6 +14,13 @@ const {
     combinarPlanes
 } = require('./datos');
 
+const {
+    calcularDuracionTotal,
+    multiplicarDuracionesEjercicios,
+    estadisticasPlan
+} = require('./estadisticas');
+
+
 
 function menuPrincipal() {
 
@@ -148,10 +155,76 @@ function menuPlanes(plan, listaPlanes){
                     if (durAct < 1 || intAct < 1 || intAct > 10){
                         console.log('Datos no válidos.');
                     } else {
-                        let ejActualizado = actualizarEjercicio(listaPlanes.get(plan.nombre), nombreAct, durAct, intAct);
-                        let planActualizado = agregarEjercicio(listaPlanes.get(plan.nombre), ejActualizado);
-                        listaPlanes.set(listaPlanes.get(plan.nombre), planActualizado);
+                        let planActualizado = actualizarEjercicio(listaPlanes.get(plan.nombre), nombreAct, durAct, intAct);
+                        listaPlanes.set(planActualizado.nombre, planActualizado);
                         console.log('Ejercicio actualizado.');
+                    }
+                }
+                break;
+            case 6:
+                let sumaTotal = calcularDuracionTotal(listaPlanes.get(plan.nombre));
+                console.log('Duración total: ' + sumaTotal + ' minutos');
+                break;
+            case 7:
+                let nombreBusq = prompt('Nombre del ejercicio a buscar: ');
+                let ejResult = buscarEjercicioRecursivo(listaPlanes.get(plan.nombre), nombreBusq);
+                if (ejResult != null){
+                    console.log(ejResult);
+                } else {
+                    console.log('Ejercicio no encontrado.');
+                }
+                break;
+            case 8:
+                let duraciones = listaPlanes.get(plan.nombre).ejercicios.map((ej) => ej.duracionEj);
+                let resMult = multiplicarDuracionesEjercicios(...duraciones);
+                console.log(resMult);
+                break;
+            case 9:
+                let criterio = String(prompt('Introduce el criterio para ordenar: '));
+                if (criterio == 'nombre' || criterio == 'duracion' || criterio == 'intensidad'){
+                    let planOrdenado = ordenarEjercicios(listaPlanes.get(plan.nombre), criterio);
+                    listaPlanes.set(plan.nombre, planOrdenado);
+                    console.log('Ejercicios ordenados.');
+                } else {
+                    console.log('Criterio no válido.');
+                }
+                break;
+            case 10:
+                let nombreParcial = prompt('Introduce el nombre parcial del ejercicio: ');
+                let ejerciciosFiltrados = buscarEjerciciosPorNombre(listaPlanes.get(plan.nombre), nombreParcial);
+                if (ejerciciosFiltrados.length < 1){
+                    console.log('No se han encontrado ejercicios.');
+                } else {
+                   console.log(ejerciciosFiltrados); 
+                }
+                break;
+            case 11:
+                let arrayProm = estadisticasPlan(listaPlanes.get(plan.nombre));
+                console.log('Duración promedio: ' + arrayProm.duracionPromedio + ' minutos');
+                console.log('Intensidad promedio: ' + arrayProm.intensidadPromedio);
+                console.log('Total de ejercicios: ' + arrayProm.totalEjercicios);
+                break;
+            case 12:
+                if (listaPlanes.size < 2) {
+                    console.log('No hay otros planes para combinar.');
+                } else {
+                    console.log('Planes disponibles: ');
+                    let cont = 1;
+                    let mapaCombinados = new Map();
+                    for (const [nombreLista, planLista] of listaPlanes){
+                        if(!(nombreLista == plan.nombre)) {
+                            console.log(cont + '. ' + nombreLista);
+                            mapaCombinados.set(cont, planLista);
+                            cont++;
+                        }
+                    }
+                    let posCombinar = Number (prompt('Escoge el número del a combinar: '));
+                    if (mapaCombinados.has(posCombinar)){
+                        let planCombinado = combinarPlanes(listaPlanes.get(plan.nombre), mapaCombinados.get(posCombinar));
+                        listaPlanes.set(planCombinado.nombre, planCombinado);
+                        console.log('Plan combinado creado: ' + plan.nombre + ' + ' + mapaCombinados.get(posCombinar).nombre);
+                    } else {
+                        console.log('Plan no válido.');
                     }
                 }
                 break;
