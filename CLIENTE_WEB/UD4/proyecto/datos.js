@@ -1,5 +1,5 @@
 function crearEjercicio(nombre, duracion, intensidad) {
-    if (Number(nombre) == '' || Number.isNaN(Number(duracion)) || duracion < 1 || Number.isNaN(Number(intensidad)) || intensidad < 1 || intensidad > 10) {
+    if (Number(nombre) == '' || Number.isNaN(Number(duracion)) || duracion < 1 || !Number.isInteger(Number(intensidad)) || intensidad < 1 || intensidad > 10) {
         return null;
     } else {
         return nuevoEj = { nombre: nombre, duracion: duracion, intensidad: intensidad };
@@ -113,7 +113,7 @@ function ordenarEjercicios(plan, criterio) {
             for (const ej of plan.ejercicios) {
                 ordenCriterio.push(ej.duracion);
             }
-            ordenCriterio.sort((a, b) => b - a);
+            ordenCriterio.sort((a, b) => a - b);
             for(const duracion of ordenCriterio) {
                 for (const ej of plan.ejercicios){
                     if (ej.duracion == duracion){
@@ -126,7 +126,7 @@ function ordenarEjercicios(plan, criterio) {
             for (const ej of plan.ejercicios) {
                 ordenCriterio.push(ej.intensidad);
             }
-            ordenCriterio.sort((a, b) => b - a);
+            ordenCriterio.sort((a, b) => a - b);
             for(const intensidad of ordenCriterio) {
                 for (const ej of plan.ejercicios){
                     if (ej.intensidad == intensidad){
@@ -136,7 +136,10 @@ function ordenarEjercicios(plan, criterio) {
             }
             break;
         default:
-            return plan;
+            return planDefault = {
+                nombre: plan.nombre,
+                ejercicios: plan.ejercicios
+            };
     }
     return nuevoPlan = {
         nombre: plan.nombre,
@@ -146,7 +149,7 @@ function ordenarEjercicios(plan, criterio) {
 
 
 function buscarEjerciciosPorNombre(plan, nombreParcial) {
-    return ejerciciosFiltrados = plan.ejercicios.filter((ej) => ej.nombre.includes(nombreParcial));
+    return plan.ejercicios.filter((ej) => ej.nombre.toLowerCase().includes(nombreParcial.toLowerCase()));
 }
 
 

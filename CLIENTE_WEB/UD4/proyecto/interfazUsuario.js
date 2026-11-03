@@ -175,9 +175,9 @@ function menuPlanes(plan, listaPlanes){
                 }
                 break;
             case 8:
-                let duraciones = listaPlanes.get(plan.nombre).ejercicios.map((ej) => ej.duracionEj);
+                let duraciones = listaPlanes.get(plan.nombre).ejercicios.map((ej) => ej.duracion);
                 let resMult = multiplicarDuracionesEjercicios(...duraciones);
-                console.log(resMult);
+                console.log('Producto de las duraciones: ' + resMult);
                 break;
             case 9:
                 let criterio = String(prompt('Introduce el criterio para ordenar: '));
