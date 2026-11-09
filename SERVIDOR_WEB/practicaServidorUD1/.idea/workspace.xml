@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e19ca87c-5a3c-4777-8d1b-ccf0de048e97" name="Changes" comment="" />
+    <list default="true" id="e19ca87c-5a3c-4777-8d1b-ccf0de048e97" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../CLIENTE_WEB/UD4/proyecto/VazquezTripodoroDanielDarioT4_1.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../../CLIENTE_WEB/UD4/proyecto/VazquezTripodoroDanielDarioT4_1.zip" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,6 +125,7 @@
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/daniel.dario.vazquez/Desktop/ODAW2B/SERVIDOR_WEB/practicaServidorUD1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
     "node.js.detected.package.tslint": "true",

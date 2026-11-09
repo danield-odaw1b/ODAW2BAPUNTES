@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+    Listado de partida: solo HTML, sin atributos de Thymeleaf.
+    Tu trabajo es convertirlo en la plantilla del listado: filas dinámicas,
+    mensajes, filtro y total de kilómetros hechos.
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rutas</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+<main>
+  <h1>Rutas de senderismo</h1>
+
+  <div th:if="${mensaje != null}">
+    <p th:text="${mensaje}"></p>
+  </div>
+
+  <a th:href="@{/rutas/nueva}">Nueva ruta</a>
+
+  <form th:method="get" th:action="@{/rutas}">
+    <label for="filtroNombre">El nombre contiene</label>
+    <input type="text" id="filtroNombre" name="filtroNombre">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Distancia (km)</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Fila de ejemplo: debe repetirse una vez por ruta -->
+    <tr th:each="ruta : ${lista}" class="hecha" >
+      <td th:text="${ruta.nombre}"></td>
+      <td th:text="${ruta.km}"></td>
+      <div th:if="${ruta.hecha == true}">
+        <td th:text="Hecha"></td>
+      </div>
+      <div th:if="${ruta.hecha == false}">
+        <td th:text="Pendiente"></td>
+      </div>
+
+      <td>
+        <a th:href="@{/rutas/{id}/editar(id = ${ruta.id})}">Editar</a>
+        <form th:method="post" th:action="@{/rutas/{id}/completar(id = ${ruta.id})}"><button type="submit">Marcar como hecha</button></form>
+        <form th:method="post" th:action="@{/rutas/{id}/eliminar(id = ${ruta.id})}"><button type="submit">Eliminar</button></form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p class="resumen" th:text="${kmTotal}"></p>
+</main>
+</body>
+</html>

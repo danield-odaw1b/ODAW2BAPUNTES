@@ -1,0 +1,102 @@
+/* Hoja de estilos del examen. Ya está hecha: no hace falta modificarla.
+   Clases que debes usar:
+   .hecha                    -> fila de una ruta hecha
+   .resumen                  -> línea con los kilómetros hechos
+   .mensaje-ok               -> aviso de operación realizada
+   .mensaje-error            -> aviso de error de una operación
+   .campo-error              -> control de formulario con error (th:errorclass)
+   .texto-error              -> texto del mensaje de error junto a un campo
+*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #1f2937;
+    background: #f8fafc;
+}
+
+main {
+    max-width: 56rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid #dbe2ea;
+    text-align: left;
+}
+
+.hecha {
+    background: #dcfce7;
+    color: #14532d;
+}
+
+.resumen {
+    font-weight: bold;
+    margin: 1rem 0 0;
+}
+
+.mensaje-ok {
+    padding: 0.7rem 1rem;
+    border-radius: 0.4rem;
+    background: #dcfce7;
+    color: #14532d;
+    border: 1px solid #86efac;
+}
+
+.mensaje-error {
+    padding: 0.7rem 1rem;
+    border-radius: 0.4rem;
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="number"], select {
+    padding: 0.5rem;
+    min-width: 16rem;
+    border: 1px solid #94a3b8;
+    border-radius: 0.3rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    background: #2563eb;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+td form {
+    display: inline;
+}
+
+td button {
+    margin-top: 0;
+}
+
+.campo-error {
+    border: 2px solid #b91c1c !important;
+}
+
+.texto-error {
+    display: block;
+    color: #b91c1c;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de error</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+    <h1>Ups! Algo ha salido mal</h1>
+    <h2 th:if="${error != null}" th:text="${error}"></h2>
+    <a th:href="@{/rutas}">Volver al listado de Rutas</a>
+
+</body>
+</html>
