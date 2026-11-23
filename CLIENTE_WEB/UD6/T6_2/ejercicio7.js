@@ -11,19 +11,19 @@ listaStrings.forEach((string) =>{
 campo.addEventListener('input', () => {
     lista.innerHTML = '';
 
-    if (campo.textContent == ''){
+    if (campo.value == ''){
         listaStrings.forEach((string) =>{
             let li3 = document.createElement('li');
             li3.textContent = string;
             lista.append(li3);
         });
+    } else {
+        listaStrings.forEach((string) => {
+            if (string.toLowerCase().includes(campo.value.toLowerCase())){
+                let li2 = document.createElement('li');
+                li2.textContent = string;
+                lista.append(li2);
+            }
+        });
     }
-
-    listaStrings.forEach((string) => {
-        if (string.toLowerCase().includes(campo.textContent.toLowerCase())){
-            let li2 = document.createElement('li');
-            li2.textContent = string;
-            lista.append(li2);
-        }
-    });
 });

@@ -14,8 +14,7 @@
 <body>
 <main>
     <h1>Ruta</h1>
-
-
+    
     <form th:method="post"
          th:action="${id == null} ? @{/rutas/nueva} : @{/rutas/{id}/editar(id = ${id})}">
         <label for="nombre">Nombre</label>
