@@ -1,9 +1,29 @@
-const atras = document.querySelector('#atras');
-const adelante = document.querySelector('#adelante');
+const listaStrings = ['Manzana', 'Banana', 'Naranja', 'Pera', 'Uva', 'Melón', 'Sandía', 'Piña'];
 
-atras.onclick = () => {
-    history.back();
-};
-adelante.onclick = () => {
-    history.forward();
-}
+const campo = document.querySelector('#inputBusqueda');
+let lista = document.querySelector('#listaAutocompletar');
+listaStrings.forEach((string) =>{
+    let li = document.createElement('li');
+    li.textContent = string;
+    lista.append(li);
+});
+
+campo.addEventListener('input', () => {
+    lista.innerHTML = '';
+
+    if (campo.value == ''){
+        listaStrings.forEach((string) =>{
+            let li3 = document.createElement('li');
+            li3.textContent = string;
+            lista.append(li3);
+        });
+    } else {
+        listaStrings.forEach((string) => {
+            if (string.toLowerCase().includes(campo.value.toLowerCase())){
+                let li2 = document.createElement('li');
+                li2.textContent = string;
+                lista.append(li2);
+            }
+        });
+    }
+});

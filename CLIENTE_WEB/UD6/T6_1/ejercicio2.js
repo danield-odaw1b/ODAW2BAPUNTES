@@ -1,8 +1,12 @@
-const boton = document.querySelector('#saludar');
-boton.onclick = () => {
-    const nombre = prompt('¿Cómo te llamas?');
-    if (nombre !== null && nombre !== ''){
-        alert('Hola, ' + nombre);
-    }
-}
+const boton = document.querySelector('#ver');
+let input = document.querySelector('#clave');
 
+boton.addEventListener('click', () => {
+    if (input.getAttribute('type') == 'password'){
+        input.setAttribute('type', 'text');
+        boton.textContent = 'Ocultar';
+    } else {
+        input.setAttribute('type', 'password');
+        boton.textContent = 'Mostrar';
+    }
+});

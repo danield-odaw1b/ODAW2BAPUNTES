@@ -1,4 +1,5 @@
-const ancho = innerWidth;
-const alto = innerHeight;
+const select = document.querySelector('#colorSelect');
 
-console.log('Ancho: ' + ancho + ' px, alto: ' + alto + ' px');
+select.addEventListener('change', () => {
+    document.body.style.backgroundColor = select.value;
+});
